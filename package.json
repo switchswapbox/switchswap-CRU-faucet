@@ -7,14 +7,16 @@
     "dev": "nodemon -r dotenv/config ./bin/www"
   },
   "dependencies": {
+    "@crustio/type-definitions": "^1.2.0",
+    "@polkadot/api": "4.2.2-4",
     "axios": "^0.21.4",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1",
-    "@crustio/type-definitions": "^1.2.0",
-    "@polkadot/api": "4.2.2-4"
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7",
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",

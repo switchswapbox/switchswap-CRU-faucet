@@ -10,6 +10,8 @@
     "ecmaVersion": 12
   },
   "rules": {
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "consistent-return": "warn",
+    "no-else-return": "warn"
   }
 }
