@@ -12,7 +12,6 @@ const distributedTwitterId = require('../models/distributedTwitterId');
 
 const chainAddr = 'wss://rpc.crust.network';
 const wsProvider = new WsProvider(chainAddr);
-const FAUCET_AMOUNT = 0.000001 * 10 ** 12;
 
 // Status Code
 const DISTRIBUTE_SUCCESS = 0;
@@ -82,7 +81,10 @@ router.post('/', async (req, res, next) => {
             const krp = kr.addFromUri(process.env.seeds);
 
             // 3. Send transaction
-            const tx = chain.tx.balances.transfer(crustAddr, FAUCET_AMOUNT);
+            const tx = chain.tx.balances.transfer(
+              crustAddr,
+              parseInt(process.env.FAUCET_AMOUNT, 10)
+            );
             const txHash = await tx.signAndSend(krp);
 
             // 4. Register Twitter ID in database
